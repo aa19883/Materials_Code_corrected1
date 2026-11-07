@@ -1,0 +1,31 @@
+panel,axis,pixel,value
+a,y (accuracy %),110,99.75
+a,y (accuracy %),173,99.5
+a,y (accuracy %),235,99.25
+a,y (accuracy %),297,99.0
+a,y (accuracy %),359,98.75
+a,y (accuracy %),421,98.5
+a,y (accuracy %),484,98.25
+a,y (accuracy %),546,98.0
+a,x (epoch),164,1
+a,x (epoch),218,2
+a,x (epoch),272,3
+a,x (epoch),326,4
+a,x (epoch),380,5
+a,x (epoch),435,6
+a,x (epoch),489,7
+a,x (epoch),543,8
+a,x (epoch),597,9
+a,x (epoch),651,10
+b,y (precision x recall),127,1.0
+b,y (precision x recall),211,0.8
+b,y (precision x recall),295,0.6
+b,y (precision x recall),378,0.4
+b,y (precision x recall),462,0.2
+b,y (precision x recall),546,0.0
+b,x (threshold),809,0
+b,x (threshold),908,0.2
+b,x (threshold),1008,0.4
+b,x (threshold),1108,0.6
+b,x (threshold),1207,0.8
+b,x (threshold),1307,1.0

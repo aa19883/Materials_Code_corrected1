@@ -1,0 +1,13 @@
+{
+ "_note": "Single source of exact inputs. Status codes: V = verified source count/value printed in the source article; D = digitised from a source figure (approximate); H = hypothetical parameter chosen by the authors; C = derived.",
+ "caseA": {"ref":"Abdulkarim Shwany et al. 2025", "TP":1462,"FN":1,"FP":20,"TN":1517, "status":"V",
+           "auc":{"LR1":0.93948,"LR2":0.97562,"LR3":0.99992}, "auc_status":"V (legend of source Fig. 7)",
+           "printed":{"acc":99.30,"prec":99.93,"rec":98.69,"f1":99.31,"jac":98.63,"kappa":98.59,"FPV":0.000684,"FNR":0.013012},
+           "threshold_curve":{"argmax":0.065,"plateau1pct":[0.054,0.585],"plateau3pct_upper":0.85,"status":"D"}},
+ "baselines": {"Decision tree (Kapan & Gunal)":99.00,"LR+SVM+DT (Karim et al.)":98.12,"LSTM (Almousa et al.)":97.37,"KNN (Akour et al.)":94.00, "status":"V (accuracies); sample sizes unknown"},
+ "caseB": {"ref":"Emmanuel & Oghie 2026 (arXiv:2606.00889)","TN":23353,"FP":294,"FN":12,"TP":23512,"stated_n":47159,
+           "printed":{"acc":99.24,"prec":98.74,"rec":99.95,"f1":99.34,"auc":99.65},"status":"V"},
+ "caseC": {"ref":"Dubey et al. 2025 (arXiv:2512.16717)","n":19873,"valid_text":10000,"acc":99.819,"prec":100.0,"rec":99.635,"fn_pct_text":0.36,"status":"V (rates); cell counts derived (C)"},
+ "scenario_grid": {"prevalence":[0.001,0.005,0.01,0.02,0.05,0.10,0.25],"k":[10,100],"status":"H"},
+ "seed": 20261021
+}

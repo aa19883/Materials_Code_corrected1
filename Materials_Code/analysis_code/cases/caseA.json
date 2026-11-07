@@ -1,0 +1,17 @@
+{
+ "id": "A",
+ "reference": "Z. A. Abdulkarim Shwany et al., Intelligent Data Analysis, 2025, doi:10.1177/1088467X251338939",
+ "counts": {"TP": 1462, "FN": 1, "FP": 20, "TN": 1517},
+ "counts_status": "V (printed)",
+ "counts_location": "Fig. 4 of the source (confusion matrix, test partition)",
+ "printed": {"decimals": 2, "accuracy": 99.30, "precision": 99.93, "recall": 98.69, "f1": 99.31, "jaccard": 98.63, "kappa": 98.59},
+ "printed_location": "Table 1 of the source",
+ "positive_class_stated": "phishing = 1 in the text; Table 1 values correspond to the legitimate class",
+ "stated_n": 3000,
+ "auc": 0.99992, "auc_location": "Fig. 7 legend of the source (learning rate 0.01)",
+ "provenance": {"total_n": "symbolic only", "split_protocol": "not stated", "duplicate_handling": "not stated",
+                "selection_on_partition": "three learning rates compared; rule not stated", "operating_threshold": "not stated",
+                "cluster_structure": "not stated", "calibration_evidence": "none", "score_release": "none"},
+ "baselines": [{"name": "Decision tree", "accuracy": 99.00}, {"name": "LR+SVM+DT", "accuracy": 98.12}, {"name": "LSTM", "accuracy": 97.37}, {"name": "KNN", "accuracy": 94.00}],
+ "baseline_sample_sizes": "not stated"
+}

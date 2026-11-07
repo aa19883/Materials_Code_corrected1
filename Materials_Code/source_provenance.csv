@@ -1,0 +1,14 @@
+case,item,value,status,location_in_source
+A,confusion matrix,TP 1462; FN 1; FP 20; TN 1517,V,Fig. 4 of Abdulkarim Shwany et al. 2025
+A,printed metrics,acc 99.30; prec 99.93; rec 98.69; F1 99.31; Jaccard 98.63; kappa 98.59,V,Table 1
+A,AUC,0.93948 / 0.97562 / 0.99992,V,Fig. 7 legend
+A,baseline accuracies,99.00; 98.12; 97.37; 94.00,V,Table 2 (sample sizes not given)
+A,threshold curve,max 0.065; 1% plateau 0.054-0.585,D,Fig. 8 (digitised)
+B,confusion matrix,TN 23353; FP 294; FN 12; TP 23512,V,Table 8 Sec. 4.3 of arXiv:2606.00889
+B,printed metrics,acc 99.24; prec 98.74; rec 99.95; F1 99.34; AUC 99.65,V,Table 7 Sec. 4.2
+B,test size,47159,V,Sec. 3.1 and title of Table 8
+B,dataset sizes,235795 original; 233656 cleaned; 188636 train,V,Tables 2-3; Sec. 3.1
+C,test size,19873,V,Abstract; Sec. IV.B.1 of arXiv:2512.16717
+C,printed rates,acc 99.819; prec 100; rec 99.635,V,Table I; abstract
+C,valid URLs all correct,10000,V,Sec. V.D
+C,FN and TP,36 and 9837,C,derived from the rates and n

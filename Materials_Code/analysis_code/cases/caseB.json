@@ -1,0 +1,15 @@
+{
+ "id": "B",
+ "reference": "U. U. Emmanuel and F. G. Oghie, arXiv:2606.00889, 2026",
+ "counts": {"TP": 23512, "FN": 12, "FP": 294, "TN": 23353},
+ "counts_status": "V (printed)",
+ "counts_location": "Table 8, Section 4.3 of the source (title: 47,159 samples)",
+ "printed": {"decimals": 2, "accuracy": 99.24, "precision": 98.74, "recall": 99.95, "f1": 99.34},
+ "printed_location": "Table 7, Section 4.2 of the source",
+ "positive_class_stated": "phishing",
+ "stated_n": 47159, "stated_n_location": "Section 3.1 and title of Table 8 of the source",
+ "auc": 0.9965, "auc_location": "Table 7 of the source (ROC-AUC 99.65%)",
+ "provenance": {"total_n": "235,795 original; 233,656 after cleaning (Tables 2-3); splits 188,636 + 47,159 sum to 235,795", "split_protocol": "random train-test split stated in Section 3.1 (stratification not verified here)",
+                "duplicate_handling": "cleaning described; duplicate handling across splits not verified here", "selection_on_partition": "not verified here",
+                "operating_threshold": "not stated", "cluster_structure": "not stated", "calibration_evidence": "none", "score_release": "none"}
+}

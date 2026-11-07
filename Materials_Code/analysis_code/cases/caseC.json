@@ -1,0 +1,14 @@
+{
+ "id": "C",
+ "reference": "R. Dubey, A. M. Tripathi, A. Srivastava, and S. Singh, arXiv:2512.16717, 2025",
+ "counts": {"TP": 9837, "FN": 36, "FP": 0, "TN": 10000},
+ "counts_status": "C (derived: n = 19,873; 10,000 valid URLs all correct; recall 99.635% gives FN = 36; TP = 9,873 - 36)",
+ "counts_location": "Abstract and Section IV.B.1 (n), Table I (rates), Section V.D (all 10,000 valid URLs correct)",
+ "printed": {"decimals": 3, "accuracy": 99.819, "precision": 100.0, "recall": 99.635},
+ "printed_location": "Table I and abstract of the source",
+ "positive_class_stated": "phishing",
+ "stated_n": 19873,
+ "auc": null,
+ "provenance": {"total_n": "test set 19,873 (~20%)", "split_protocol": "not verified here", "duplicate_handling": "not verified here", "selection_on_partition": "not verified here",
+                "operating_threshold": "not stated", "cluster_structure": "not stated", "calibration_evidence": "none", "score_release": "none"}
+}

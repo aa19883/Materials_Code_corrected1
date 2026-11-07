@@ -1,0 +1,330 @@
+{
+ "case": "C",
+ "reference": "R. Dubey, A. M. Tripathi, A. Srivastava, and S. Singh, arXiv:2512.16717, 2025",
+ "steps": [
+  {
+   "step": "S1 metric reconstruction and class convention",
+   "inputs_needed": [
+    "counts",
+    "printed metrics"
+   ],
+   "inputs_missing": [],
+   "status": "done",
+   "evidential_label": "arithmetic (V; C if counts derived)",
+   "result": {
+    "convention_evidence": "phishing class positive",
+    "convention_identified_by": [
+     "precision",
+     "recall"
+    ],
+    "per_metric": {
+     "accuracy": {
+      "printed": 99.819,
+      "phishing_positive": 99.81885,
+      "legitimate_positive": 99.81885,
+      "phishing_matches": [
+       "rounding"
+      ],
+      "legitimate_matches": [
+       "rounding"
+      ],
+      "invariant": true
+     },
+     "precision": {
+      "printed": 100.0,
+      "phishing_positive": 100.0,
+      "legitimate_positive": 99.64129,
+      "phishing_matches": [
+       "rounding",
+       "truncation"
+      ],
+      "legitimate_matches": [],
+      "invariant": false
+     },
+     "recall": {
+      "printed": 99.635,
+      "phishing_positive": 99.63537,
+      "legitimate_positive": 100.0,
+      "phishing_matches": [
+       "rounding",
+       "truncation"
+      ],
+      "legitimate_matches": [],
+      "invariant": false
+     }
+    }
+   },
+   "note": "invariant measures (accuracy, kappa, MCC, Youden) carry no evidence on the convention; printed values are compared at the printed number of decimals with the unrounded recomputation",
+   "stop_reason": null
+  },
+  {
+   "step": "S2 internal consistency",
+   "inputs_needed": [
+    "counts",
+    "printed accuracy",
+    "stated n"
+   ],
+   "inputs_missing": [],
+   "status": "done",
+   "evidential_label": "arithmetic",
+   "result": {
+    "inconsistencies": "none found"
+   },
+   "note": "when inconsistent, all later steps are conditional on which set of numbers is correct (clarification by the authors needed)",
+   "stop_reason": null
+  },
+  {
+   "step": "S3 sampling intervals",
+   "inputs_needed": [
+    "counts",
+    "independence of instances"
+   ],
+   "inputs_missing": [],
+   "status": "done",
+   "evidential_label": "conditional on the partition being an independent, representative sample",
+   "result": {
+    "accuracy": {
+     "estimate": 0.9981884969556685,
+     "wilson": [
+      0.9974932727083861,
+      0.9986911583523441
+     ],
+     "clopper_pearson": [
+      0.9974929896083985,
+      0.9987309329541493
+     ]
+    },
+    "TPR": {
+     "estimate": 0.9963536918869644,
+     "wilson": [
+      0.994956367416418,
+      0.9973649167514979
+     ],
+     "clopper_pearson": [
+      0.9949555119818826,
+      0.9974449033377274
+     ]
+    },
+    "FPR": {
+     "estimate": 0.0,
+     "wilson": [
+      0.0,
+      0.00038399837673212995
+     ],
+     "clopper_pearson": [
+      0.0,
+      0.0003688199146187622
+     ]
+    },
+    "PPV (phishing positive)": {
+     "estimate": 1.0,
+     "wilson": [
+      0.999609641218452,
+      0.9999999999999999
+     ],
+     "clopper_pearson": [
+      0.9996250698510897,
+      1.0
+     ]
+    }
+   },
+   "note": "sampling (frequentist) intervals; they say nothing about deployment",
+   "stop_reason": null
+  },
+  {
+   "step": "S4 provenance record",
+   "inputs_needed": [
+    "total_n",
+    "split_protocol",
+    "duplicate_handling",
+    "selection_on_partition",
+    "operating_threshold",
+    "cluster_structure",
+    "calibration_evidence",
+    "score_release"
+   ],
+   "inputs_missing": [
+    "split_protocol",
+    "duplicate_handling",
+    "selection_on_partition",
+    "operating_threshold",
+    "cluster_structure",
+    "calibration_evidence",
+    "score_release"
+   ],
+   "status": "partial",
+   "evidential_label": "checklist (no inference)",
+   "result": {
+    "total_n": "test set 19,873 (~20%)",
+    "split_protocol": "not verified here",
+    "duplicate_handling": "not verified here",
+    "selection_on_partition": "not verified here",
+    "operating_threshold": "not stated",
+    "cluster_structure": "not stated",
+    "calibration_evidence": "none",
+    "score_release": "none"
+   },
+   "note": "unresolved items are recorded, not assumed; every interval and deployment figure below inherits them",
+   "stop_reason": null
+  },
+  {
+   "step": "S5 Layer A: precision at stated prevalence",
+   "inputs_needed": [
+    "TPR, FPR",
+    "stated prevalence (H)"
+   ],
+   "inputs_missing": [],
+   "status": "done",
+   "evidential_label": "conditional on rate transfer and on the stated prevalence (H)",
+   "result": {
+    "0.001": {
+     "point": 1.0,
+     "conditional_fpr_only_lower": 0.7300338492917885,
+     "joint_lower_clopper_pearson": 0.7297569977310572,
+     "joint_lower_coverage_at_least": 0.9506249999999999,
+     "credible_95_jeffreys": [
+      0.7996571605438249,
+      0.9999506684304261
+     ],
+     "fpr_max_for_90pct": 0.00011081678254776605
+    },
+    "0.01": {
+     "point": 1.0,
+     "conditional_fpr_only_lower": 0.9646487143310482,
+     "joint_lower_clopper_pearson": 0.964600794837194,
+     "joint_lower_coverage_at_least": 0.9506249999999999,
+     "credible_95_jeffreys": [
+      0.9757736064792618,
+      0.99999511106862
+     ],
+     "fpr_max_for_90pct": 0.001118242078436548
+    },
+    "0.05": {
+     "point": 1.0,
+     "conditional_fpr_only_lower": 0.9930158970797152,
+     "joint_lower_clopper_pearson": 0.9930061511794399,
+     "joint_lower_coverage_at_least": 0.9506249999999999,
+     "credible_95_jeffreys": [
+      0.9952576496921621,
+      0.9999990617165334
+     ],
+     "fpr_max_for_90pct": 0.005826629777116752
+    }
+   },
+   "note": "conditional_fpr_only_lower holds TPR at its estimate (not a joint bound); joint_lower moves both rates (independent class-conditional binomials, coverage >= 0.975^2 = 95.06%); neither covers prevalence or rate-transfer uncertainty",
+   "stop_reason": null
+  },
+  {
+   "step": "S6 accuracy-to-precision bound",
+   "inputs_needed": [
+    "accuracy",
+    "evaluation prevalence"
+   ],
+   "inputs_missing": [],
+   "status": "done",
+   "evidential_label": "analytic bound, conditional on rate transfer",
+   "result": {
+    "0.001": {
+     "min_precision": 0.21756156992428619,
+     "accuracy_needed_for_90pct": 0.9999440334456576
+    },
+    "0.01": {
+     "min_precision": 0.7372456502506608,
+     "accuracy_needed_for_90pct": 0.9994352465879999
+    },
+    "0.05": {
+     "min_precision": 0.935979034069636,
+     "accuracy_needed_for_90pct": 0.9970573374848416
+    }
+   },
+   "note": null,
+   "stop_reason": null
+  },
+  {
+   "step": "S7 Layer B: ROC-model scenarios",
+   "inputs_needed": [
+    "TPR, FPR > 0",
+    "AUC"
+   ],
+   "inputs_missing": [
+    "AUC"
+   ],
+   "status": "stopped",
+   "evidential_label": "none",
+   "result": null,
+   "note": null,
+   "stop_reason": "observed FPR (or miss rate) is zero: a binormal curve through the observed point is undefined; no AUC to anchor a model"
+  },
+  {
+   "step": "S8 Layer C: thresholds",
+   "inputs_needed": [
+    "score release or calibration curve",
+    "operating threshold"
+   ],
+   "inputs_missing": [
+    "calibration evidence",
+    "operating threshold"
+   ],
+   "status": "stopped",
+   "evidential_label": "conditional on calibration (unsupported)",
+   "result": {
+    "eq17_mapping_for_reference_only": {
+     "0.001": {
+      "k=10": 0.9899629905349997,
+      "k=100": 0.907945474631752
+     },
+     "0.01": {
+      "k=10": 0.9071862873308354,
+      "k=100": 0.49429233038691184
+     },
+     "0.05": {
+      "k=10": 0.6522791364004632,
+      "k=100": 0.15795642761330325
+     }
+    }
+   },
+   "note": null,
+   "stop_reason": "no calibration evidence or threshold: no statement about what threshold to use; Eq. (17) values are shown only as a conditional mapping"
+  },
+  {
+   "step": "S10 dependence",
+   "inputs_needed": [
+    "cluster identifiers or sizes"
+   ],
+   "inputs_missing": [
+    "cluster structure"
+   ],
+   "status": "partial",
+   "evidential_label": "scenario",
+   "result": {
+    "deff=1.45": [
+     0.0,
+     0.0005567014486579143
+    ],
+    "deff=3.45": [
+     0.0,
+     0.0013235492098929446
+    ]
+   },
+   "note": "Wilson FPR interval at the effective size n/deff (width illustration only; coverage under clustering requires the cluster model of Section 4.8)",
+   "stop_reason": null
+  }
+ ],
+ "unresolved_inputs": [
+  "AUC",
+  "calibration evidence",
+  "calibration_evidence",
+  "cluster structure",
+  "cluster_structure",
+  "duplicate_handling",
+  "operating threshold",
+  "operating_threshold",
+  "score_release",
+  "selection_on_partition",
+  "split_protocol"
+ ],
+ "stopped_steps": [
+  "S7 Layer B: ROC-model scenarios",
+  "S8 Layer C: thresholds"
+ ]
+}

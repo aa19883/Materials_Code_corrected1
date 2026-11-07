@@ -1,0 +1,63 @@
+{
+ "flow": {
+  "q1_returned": 10,
+  "q2_returned": 10,
+  "merged_unique": 18,
+  "duplicates_removed": 2,
+  "excluded_title_screen": {"count": 3, "reasons": {"survey/SoK, not a detector study": 1, "patent document": 1, "product/model web page, not a research article": 1}},
+  "passed_title_screen": 15,
+  "fetched_full_text": {"attempted_fetches_of_screened_items": 13, "full_text_read": 7, "metadata_or_abstract_page_only_or_blocked": 6, "not_fetched_prespecified_exclusions": 2, "note": "ar5iv 2205.07411 was read as a summary only; 2112.02226 read to char 100000 of 106981."},
+  "excluded_full_text": {"count": 15, "per_paper": "see excluded list"},
+  "eligible": 0,
+  "stop_reason": "merged list exhausted with 0 of 4 eligible papers",
+  "query_results_Q1": [
+   "1 The Performance of Sequential Deep Learning Models in Detecting Phishing Websites Using Contextual Features of URLs | https://arxiv.org/pdf/2404.09802",
+   "2 A Lightweight Hybrid MLP-Based Framework for Real-Time Phishing URL Detection Using Structural URL Features | https://arxiv.org/pdf/2606.00889",
+   "3 Phishing Website Detection Using Fastai library | https://researchgate.net/profile/Soma-Ghosh-9/publication/353857759_Phishing_Website_Detection_Using_Fastai_library/links/6320641c873eca0c0084c1f5/Phishing-Website-Detection-Using-Fastai-library.pdf",
+   "4 IEEE Access (Jan 2024) | https://doaj.org/article/c2940756f7a24966927d5ed641e3dab4",
+   "5 beei.org | https://beei.org/index.php/EEI/article/download/10099/4503",
+   "6 ijournalse.org | https://ijournalse.org/index.php/ESJ/article/download/3356/1067/13674",
+   "7 Hybrid Deep Learning Approaches Enable Intrusion Detection System for Zero-Day Phishing Detection | https://www.open-access.bcu.ac.uk/17016/",
+   "8 journals.ust.edu | https://journals.ust.edu/index.php/JST/article/view/3072",
+   "9 Applied Sciences (Nov 2024) | https://doaj.org/article/fba26d36b182475584203a2600463251",
+   "10 ar5iv.labs.arxiv.org | https://ar5iv.labs.arxiv.org/html/2205.07411"
+  ],
+  "query_results_Q2": [
+   "1 Phishing URL Detection using Bi-LSTM | https://arxiv.org/pdf/2504.21049",
+   "2 Phishing Detection System: An Ensemble Approach Using Character-Level CNN and Feature Engineering | https://arxiv.org/pdf/2512.16717",
+   "3 A Lightweight Hybrid MLP-Based Framework ... (duplicate of Q1 #2) | https://arxiv.org/pdf/2606.00889",
+   "4 PhishMatch: A Layered Approach for Effective Detection of Phishing URLs | https://arxiv.org/pdf/2112.02226",
+   "5 SOK: A Comprehensive Reexamination of Phishing Research from the Security Perspective | https://arxiv.org/pdf/1911.00953",
+   "6 Phishing Website Detection Using a Combined Model of ANN and LSTM | https://arxiv.org/pdf/2404.10780",
+   "7 Machine learning-based systems and methods of using URLs and HTML encodings for detecting phishing websites | https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/11438377",
+   "8 Web URLs Phishing Detection Model with Random Forest Algorithm | https://kc.umn.ac.id/id/eprint/39845/",
+   "9 Phishing Website Detection Using Fastai library (duplicate of Q1 #3) | https://researchgate.net/profile/Soma-Ghosh-9/publication/353857759_Phishing_Website_Detection_Using_Fastai_library/links/6320641c873eca0c0084c1f5/Phishing-Website-Detection-Using-Fastai-library.pdf",
+   "10 Model Performance Details | https://phishing-detector.duckdns.org/models"
+  ],
+  "caveats": [
+   "Several papers could not be read in full because WebFetch refused URLs not on the allowlist or returned bot-check pages (beei.org, doi.org/ieeexplore for Zara et al. IEEE Access 2024, mdpi.com for ul Haq et al. Applied Sciences 2024, journals.ust.edu PDF, UMN PDF returned only a similarity report). These were excluded as 'full text not retrievable' and eligibility is UNVERIFIED, not disproven. Two of them have abstract-level headline accuracy at or above 99% (ul Haq et al. 99.7%; Faza 99%) and are the main candidates a manual check should examine.",
+   "No numbers were recomputed or interpreted."
+  ]
+ },
+ "excluded": [
+  {"title":"SOK: A Comprehensive Reexamination of Phishing Research from the Security Perspective","url":"https://arxiv.org/pdf/1911.00953","stage":"title","reason":"survey/SoK"},
+  {"title":"Machine learning-based systems and methods of using URLs and HTML encodings for detecting phishing websites","url":"https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/11438377","stage":"title","reason":"patent document, not a research article"},
+  {"title":"Model Performance Details","url":"https://phishing-detector.duckdns.org/models","stage":"title","reason":"product/model web page"},
+  {"title":"A Lightweight Hybrid MLP-Based Framework for Real-Time Phishing URL Detection Using Structural URL Features (arXiv:2606.00889)","url":"https://arxiv.org/pdf/2606.00889","stage":"full_text","reason":"prespecified exclusion (already used paper, Emmanuel & Oghie); not fetched"},
+  {"title":"Phishing Detection System: An Ensemble Approach Using Character-Level CNN and Feature Engineering (arXiv:2512.16717)","url":"https://arxiv.org/pdf/2512.16717","stage":"full_text","reason":"prespecified exclusion (already used paper, Dubey et al.); not fetched"},
+  {"title":"The Performance of Sequential Deep Learning Models in Detecting Phishing Websites Using Contextual Features of URLs (Gopali et al., ACM SAC 2024, arXiv:2404.09802)","url":"https://arxiv.org/pdf/2404.09802","stage":"full_text","reason":"headline accuracy below 99%: Table 2 prints accuracy 0.980/0.980/0.970/0.980; (confusion matrix Table 3 with counts and test size 14,715 are printed, but accuracy criterion fails)"},
+  {"title":"Phishing Website Detection Using Fast.ai library (Jawade & Ghosh, ICCICT 2021)","url":"https://researchgate.net/profile/Soma-Ghosh-9/publication/353857759_Phishing_Website_Detection_Using_Fastai_library/links/6320641c873eca0c0084c1f5/Phishing-Website-Detection-Using-Fastai-library.pdf","stage":"full_text","reason":"published 2021 (outside 2024-2026); confusion matrix figure only, not machine-readable; accuracy printed 98.92 / 98.84%; test size not printed"},
+  {"title":"Phishing Website Detection Using Deep Learning Models (Zara et al., IEEE Access 2024)","url":"https://doaj.org/article/c2940756f7a24966927d5ed641e3dab4","stage":"full_text","reason":"full text not retrievable (doi.org and ieeexplore fetches refused by allowlist; DOAJ page has metadata only); eligibility unverified; open-access status not stated on page"},
+  {"title":"(unknown title) beei.org EEI article 10099","url":"https://beei.org/index.php/EEI/article/download/10099/4503","stage":"full_text","reason":"full text not retrievable (bot-verification page returned twice); eligibility unverified"},
+  {"title":"HyDNN: A Hybrid Deep Learning Approach for Phishing URL Detection (Dsouza et al., Emerging Science Journal 2026)","url":"https://ijournalse.org/index.php/ESJ/article/download/3356/1067/13674","stage":"full_text","reason":"headline accuracy below 99% (98.87% / 97.63% / 93.77%, Tables 5-7); confusion matrices Figures 16-20 figure only, not machine-readable; test-set size not printed (70:30 and 80/20 both stated)"},
+  {"title":"Hybrid Deep Learning Approaches Enable Intrusion Detection System for Zero-Day Phishing Detection (Shaikh et al., VFAST TSE 2025)","url":"https://www.open-access.bcu.ac.uk/17016/","stage":"full_text","reason":"no confusion matrix printed; accuracy 98%"},
+  {"title":"Phishing URL Detection Using Deep Learning: A CNN-Based Approach (Saeed et al., J. Science and Technology 2025)","url":"https://journals.ust.edu/index.php/JST/article/view/3072","stage":"full_text","reason":"PDF not retrievable (allowlist refusal); abstract prints 98% test accuracy; confusion matrix unverified"},
+  {"title":"Detecting Phishing URLs Based on a Deep Learning Approach to Prevent Cyber-Attacks (ul Haq et al., Applied Sciences 2024)","url":"https://doaj.org/article/fba26d36b182475584203a2600463251","stage":"full_text","reason":"full text not retrievable (doi.org and mdpi.com fetches refused by allowlist; DOAJ page has metadata only); abstract-level accuracy 99.7% so UNVERIFIED candidate; matrix, test size unchecked"},
+  {"title":"Phishing Detection Leveraging Machine Learning and Deep Learning: A Review (IEEE S&P, arXiv:2205.07411)","url":"https://ar5iv.labs.arxiv.org/html/2205.07411","stage":"full_text","reason":"review article; published 2022"},
+  {"title":"Phishing URL Detection using Bi-LSTM (Baskota, arXiv 2504.21049)","url":"https://arxiv.org/pdf/2504.21049","stage":"full_text","reason":"headline accuracy below 99% (Table I 0.98; abstract 97%); multi-class (4 classes), no binary matrix printed in text, matrix Fig. 2 image only; test-set size not stated"},
+  {"title":"PhishMatch: A Layered Approach for Effective Detection of Phishing URLs (arXiv 2112.02226)","url":"https://arxiv.org/pdf/2112.02226","stage":"full_text","reason":"submitted December 2021 (outside 2024-2026); no accuracy printed in the portion read (first 100000 of 106981 chars)"},
+  {"title":"Phishing Website Detection Using a Combined Model of ANN and LSTM (Farooq & Jabbar, arXiv 2404.10780)","url":"https://arxiv.org/pdf/2404.10780","stage":"full_text","reason":"headline accuracy below 99% (Table II and Section V.C: 98%); matrix cell counts are in text (1480, 1508, 9, 3) but error-cell labels contradictory"},
+  {"title":"Web URLs Phishing Detection Model with Random Forest Algorithm (Faza, IBDAP 2024)","url":"https://kc.umn.ac.id/id/eprint/39845/","stage":"full_text","reason":"full text not retrievable (PDF fetch returned only a similarity report); abstract prints 99% accuracy so UNVERIFIED candidate; matrix and test size unchecked"}
+ ],
+ "eligible": []
+}

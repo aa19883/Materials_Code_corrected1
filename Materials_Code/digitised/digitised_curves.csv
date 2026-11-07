@@ -1,0 +1,11 @@
+epoch,training_accuracy_pct,validation_accuracy_pct,training_value_source,px_x,px_y_training,px_y_validation
+1,92.1,98.2,text (below axis),164,,496
+2,98.3,99.0,marker,218,470.7,297
+3,98.8,98.2,marker,272,347.1,496
+4,99.0,98.4,marker (overlaps baseline line),326,297.0,446
+5,99.2,98.6,marker,380,247.2,397
+6,99.3,99.1,marker,435,222.1,272
+7,99.3,98.9,marker,489,222.0,322
+8,99.3,99.3,inferred (hidden under validation marker),543,,222
+9,99.4,98.6,marker,597,197.0,397
+10,99.5,98.8,marker,651,173.0,347

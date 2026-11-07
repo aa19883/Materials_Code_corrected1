@@ -1,0 +1,555 @@
+{
+ "case": "A",
+ "reference": "Z. A. Abdulkarim Shwany et al., Intelligent Data Analysis, 2025, doi:10.1177/1088467X251338939",
+ "steps": [
+  {
+   "step": "S1 metric reconstruction and class convention",
+   "inputs_needed": [
+    "counts",
+    "printed metrics"
+   ],
+   "inputs_missing": [],
+   "status": "done",
+   "evidential_label": "arithmetic (V; C if counts derived)",
+   "result": {
+    "convention_evidence": "legitimate class positive",
+    "convention_identified_by": [
+     "precision",
+     "recall",
+     "f1",
+     "jaccard"
+    ],
+    "per_metric": {
+     "accuracy": {
+      "printed": 99.3,
+      "phishing_positive": 99.3,
+      "legitimate_positive": 99.3,
+      "phishing_matches": [
+       "rounding",
+       "truncation"
+      ],
+      "legitimate_matches": [
+       "rounding",
+       "truncation"
+      ],
+      "invariant": true
+     },
+     "precision": {
+      "printed": 99.93,
+      "phishing_positive": 98.6505,
+      "legitimate_positive": 99.9341,
+      "phishing_matches": [],
+      "legitimate_matches": [
+       "rounding",
+       "truncation"
+      ],
+      "invariant": false
+     },
+     "recall": {
+      "printed": 98.69,
+      "phishing_positive": 99.9316,
+      "legitimate_positive": 98.6988,
+      "phishing_matches": [],
+      "legitimate_matches": [
+       "truncation"
+      ],
+      "invariant": false
+     },
+     "f1": {
+      "printed": 99.31,
+      "phishing_positive": 99.2869,
+      "legitimate_positive": 99.3126,
+      "phishing_matches": [],
+      "legitimate_matches": [
+       "rounding",
+       "truncation"
+      ],
+      "invariant": false
+     },
+     "jaccard": {
+      "printed": 98.63,
+      "phishing_positive": 98.584,
+      "legitimate_positive": 98.6346,
+      "phishing_matches": [],
+      "legitimate_matches": [
+       "rounding",
+       "truncation"
+      ],
+      "invariant": false
+     },
+     "kappa": {
+      "printed": 98.59,
+      "phishing_positive": 98.5996,
+      "legitimate_positive": 98.5996,
+      "phishing_matches": [
+       "truncation"
+      ],
+      "legitimate_matches": [
+       "truncation"
+      ],
+      "invariant": true
+     }
+    }
+   },
+   "note": "invariant measures (accuracy, kappa, MCC, Youden) carry no evidence on the convention; printed values are compared at the printed number of decimals with the unrounded recomputation",
+   "stop_reason": null
+  },
+  {
+   "step": "S2 internal consistency",
+   "inputs_needed": [
+    "counts",
+    "printed accuracy",
+    "stated n"
+   ],
+   "inputs_missing": [],
+   "status": "done",
+   "evidential_label": "arithmetic",
+   "result": {
+    "inconsistencies": "none found"
+   },
+   "note": "when inconsistent, all later steps are conditional on which set of numbers is correct (clarification by the authors needed)",
+   "stop_reason": null
+  },
+  {
+   "step": "S3 sampling intervals",
+   "inputs_needed": [
+    "counts",
+    "independence of instances"
+   ],
+   "inputs_missing": [],
+   "status": "done",
+   "evidential_label": "conditional on the partition being an independent, representative sample",
+   "result": {
+    "accuracy": {
+     "estimate": 0.993,
+     "wilson": [
+      0.9893221068366649,
+      0.9954169483002968
+     ],
+     "clopper_pearson": [
+      0.989319561380645,
+      0.995661820683818
+     ]
+    },
+    "TPR": {
+     "estimate": 0.9993164730006835,
+     "wilson": [
+      0.9961383312172543,
+      0.9998793305103113
+     ],
+     "clopper_pearson": [
+      0.9961975762604632,
+      0.9999826947444169
+     ]
+    },
+    "FPR": {
+     "estimate": 0.013012361743656473,
+     "wilson": [
+      0.008439159219150259,
+      0.020013773838042013
+     ],
+     "clopper_pearson": [
+      0.007965914232176461,
+      0.02002530362658263
+     ]
+    },
+    "PPV (phishing positive)": {
+     "estimate": 0.9865047233468286,
+     "wilson": [
+      0.9792467953286978,
+      0.9912470560716362
+     ],
+     "clopper_pearson": [
+      0.9792342608529094,
+      0.9917377728204314
+     ]
+    }
+   },
+   "note": "sampling (frequentist) intervals; they say nothing about deployment",
+   "stop_reason": null
+  },
+  {
+   "step": "S4 provenance record",
+   "inputs_needed": [
+    "total_n",
+    "split_protocol",
+    "duplicate_handling",
+    "selection_on_partition",
+    "operating_threshold",
+    "cluster_structure",
+    "calibration_evidence",
+    "score_release"
+   ],
+   "inputs_missing": [
+    "total_n",
+    "split_protocol",
+    "duplicate_handling",
+    "operating_threshold",
+    "cluster_structure",
+    "calibration_evidence",
+    "score_release"
+   ],
+   "status": "partial",
+   "evidential_label": "checklist (no inference)",
+   "result": {
+    "total_n": "symbolic only",
+    "split_protocol": "not stated",
+    "duplicate_handling": "not stated",
+    "selection_on_partition": "three learning rates compared; rule not stated",
+    "operating_threshold": "not stated",
+    "cluster_structure": "not stated",
+    "calibration_evidence": "none",
+    "score_release": "none"
+   },
+   "note": "unresolved items are recorded, not assumed; every interval and deployment figure below inherits them",
+   "stop_reason": null
+  },
+  {
+   "step": "S5 Layer A: precision at stated prevalence",
+   "inputs_needed": [
+    "TPR, FPR",
+    "stated prevalence (H)"
+   ],
+   "inputs_missing": [],
+   "status": "done",
+   "evidential_label": "conditional on rate transfer and on the stated prevalence (H)",
+   "result": {
+    "0.001": {
+     "point": 0.0713865509297749,
+     "conditional_fpr_only_lower": 0.047576089075188746,
+     "joint_lower_clopper_pearson": 0.047434646071594797,
+     "joint_lower_coverage_at_least": 0.9506249999999999,
+     "credible_95_jeffreys": [
+      0.048462978910572094,
+      0.10842399390157192
+     ],
+     "fpr_max_for_90pct": 0.00011114630997671934
+    },
+    "0.01": {
+     "point": 0.4368519668402985,
+     "conditional_fpr_only_lower": 0.3351362455014418,
+     "joint_lower_clopper_pearson": 0.33444008960725236,
+     "joint_lower_coverage_at_least": 0.9506249999999999,
+     "credible_95_jeffreys": [
+      0.33947302366909626,
+      0.5509954793927347
+     ],
+     "fpr_max_for_90pct": 0.001121567309765077
+    },
+    "0.05": {
+     "point": 0.8016649102365508,
+     "conditional_fpr_only_lower": 0.7242487828287321,
+     "joint_lower_clopper_pearson": 0.7236240620467372,
+     "joint_lower_coverage_at_least": 0.9506249999999999,
+     "credible_95_jeffreys": [
+      0.7281066004048284,
+      0.8647568991436178
+     ],
+     "fpr_max_for_90pct": 0.005843955982460139
+    }
+   },
+   "note": "conditional_fpr_only_lower holds TPR at its estimate (not a joint bound); joint_lower moves both rates (independent class-conditional binomials, coverage >= 0.975^2 = 95.06%); neither covers prevalence or rate-transfer uncertainty",
+   "stop_reason": null
+  },
+  {
+   "step": "S6 accuracy-to-precision bound",
+   "inputs_needed": [
+    "accuracy",
+    "evaluation prevalence"
+   ],
+   "inputs_missing": [],
+   "status": "done",
+   "evidential_label": "analytic bound, conditional on rate transfer",
+   "result": {
+    "0.001": {
+     "min_precision": 0.06826256883993599,
+     "accuracy_needed_for_90pct": 0.9999430170911653
+    },
+    "0.01": {
+     "min_precision": 0.42505530973451305,
+     "accuracy_needed_for_90pct": 0.9994249906472129
+    },
+    "0.05": {
+     "min_precision": 0.7939049586776858,
+     "accuracy_needed_for_90pct": 0.9970038986354776
+    }
+   },
+   "note": null,
+   "stop_reason": null
+  },
+  {
+   "step": "S7 Layer B: ROC-model scenarios",
+   "inputs_needed": [
+    "TPR, FPR > 0",
+    "AUC (optional)"
+   ],
+   "inputs_missing": [],
+   "status": "done",
+   "evidential_label": "model-dependent scenario (not an achieved result)",
+   "result": {
+    "pi=0.001|k=10|EV-point": {
+     "optimum_fpr": 0.00018401588006411012,
+     "saving_vs_observed": 0.9619803701817181,
+     "saving_vs_model_at_observed_fpr": 0.9619803701817181
+    },
+    "pi=0.001|k=10|EV-AUC": {
+     "optimum_fpr": 0.0002064058848678972,
+     "saving_vs_observed": 0.9569378193465023,
+     "saving_vs_model_at_observed_fpr": 0.9569458628422636
+    },
+    "pi=0.001|k=10|UV1 (b=0.37)": {
+     "optimum_fpr": 1.5438829318714633e-05,
+     "saving_vs_observed": 0.9938089801743022,
+     "saving_vs_model_at_observed_fpr": 0.9938089801743022
+    },
+    "pi=0.001|k=10|UV2 (b=1.16)": {
+     "optimum_fpr": 0.0002652248779061618,
+     "saving_vs_observed": 0.9495152461857169,
+     "saving_vs_model_at_observed_fpr": 0.9495152461857169
+    },
+    "pi=0.001|k=10|Logistic": {
+     "optimum_fpr": 0.00026472307130753233,
+     "saving_vs_observed": 0.9587709357725672,
+     "saving_vs_model_at_observed_fpr": 0.9587670444283305
+    },
+    "pi=0.001|k=100|EV-point": {
+     "optimum_fpr": 0.0008512467986559334,
+     "saving_vs_observed": 0.8505787099848688,
+     "saving_vs_model_at_observed_fpr": 0.8505787099848688
+    },
+    "pi=0.001|k=100|EV-AUC": {
+     "optimum_fpr": 0.0009661275640347023,
+     "saving_vs_observed": 0.8296951080747268,
+     "saving_vs_model_at_observed_fpr": 0.830011190951347
+    },
+    "pi=0.001|k=100|UV1 (b=0.37)": {
+     "optimum_fpr": 0.00010982413762410577,
+     "saving_vs_observed": 0.9615058497549979,
+     "saving_vs_model_at_observed_fpr": 0.9615058497549979
+    },
+    "pi=0.001|k=100|UV2 (b=1.16)": {
+     "optimum_fpr": 0.0011342864221778538,
+     "saving_vs_observed": 0.8172693924374319,
+     "saving_vs_model_at_observed_fpr": 0.8172693924374319
+    },
+    "pi=0.001|k=100|Logistic": {
+     "optimum_fpr": 0.0008531232901634957,
+     "saving_vs_observed": 0.8690519037801364,
+     "saving_vs_model_at_observed_fpr": 0.8689287881504899
+    },
+    "pi=0.01|k=10|EV-point": {
+     "optimum_fpr": 0.0008561016859043817,
+     "saving_vs_observed": 0.8498207601102112,
+     "saving_vs_model_at_observed_fpr": 0.8498207601102112
+    },
+    "pi=0.01|k=10|EV-AUC": {
+     "optimum_fpr": 0.0009716721016148026,
+     "saving_vs_observed": 0.8288283846419251,
+     "saving_vs_model_at_observed_fpr": 0.829148943623094
+    },
+    "pi=0.01|k=10|UV1 (b=0.37)": {
+     "optimum_fpr": 0.00011066338426570497,
+     "saving_vs_observed": 0.9612343629233784,
+     "saving_vs_model_at_observed_fpr": 0.9612343629233784
+    },
+    "pi=0.01|k=10|UV2 (b=1.16)": {
+     "optimum_fpr": 0.0011403464690126985,
+     "saving_vs_observed": 0.8164073448828527,
+     "saving_vs_model_at_observed_fpr": 0.8164073448828527
+    },
+    "pi=0.01|k=10|Logistic": {
+     "optimum_fpr": 0.0008570258985741187,
+     "saving_vs_observed": 0.8684619797865728,
+     "saving_vs_model_at_observed_fpr": 0.8683371901161105
+    },
+    "pi=0.01|k=100|EV-point": {
+     "optimum_fpr": 0.003345658271933685,
+     "saving_vs_observed": 0.5119576147504389,
+     "saving_vs_model_at_observed_fpr": 0.5119576147504389
+    },
+    "pi=0.01|k=100|EV-AUC": {
+     "optimum_fpr": 0.0038214178856298634,
+     "saving_vs_observed": 0.4425660180687869,
+     "saving_vs_model_at_observed_fpr": 0.4523748868589147
+    },
+    "pi=0.01|k=100|UV1 (b=0.37)": {
+     "optimum_fpr": 0.0007456443263137081,
+     "saving_vs_observed": 0.7843320727962803,
+     "saving_vs_model_at_observed_fpr": 0.7843320727962803
+    },
+    "pi=0.01|k=100|UV2 (b=1.16)": {
+     "optimum_fpr": 0.004035183467055862,
+     "saving_vs_observed": 0.4569620182081856,
+     "saving_vs_model_at_observed_fpr": 0.4569620182081856
+    },
+    "pi=0.01|k=100|Logistic": {
+     "optimum_fpr": 0.002726149128046599,
+     "saving_vs_observed": 0.6021085674416291,
+     "saving_vs_model_at_observed_fpr": 0.5984755050892785
+    },
+    "pi=0.05|k=10|EV-point": {
+     "optimum_fpr": 0.002313304184496863,
+     "saving_vs_observed": 0.641080326633155,
+     "saving_vs_model_at_observed_fpr": 0.641080326633155
+    },
+    "pi=0.05|k=10|EV-AUC": {
+     "optimum_fpr": 0.0026389550432792436,
+     "saving_vs_observed": 0.5901156810707158,
+     "saving_vs_model_at_observed_fpr": 0.5939985596041382
+    },
+    "pi=0.05|k=10|UV1 (b=0.37)": {
+     "optimum_fpr": 0.0004371934338447805,
+     "saving_vs_observed": 0.8647340187039444,
+     "saving_vs_model_at_observed_fpr": 0.8647340187039444
+    },
+    "pi=0.05|k=10|UV2 (b=1.16)": {
+     "optimum_fpr": 0.0028733547933757994,
+     "saving_vs_observed": 0.5895973583933387,
+     "saving_vs_model_at_observed_fpr": 0.5895973583933387
+    },
+    "pi=0.05|k=10|Logistic": {
+     "optimum_fpr": 0.0019657853861508937,
+     "saving_vs_observed": 0.7057252880494065,
+     "saving_vs_model_at_observed_fpr": 0.7042966979283589
+    },
+    "pi=0.05|k=100|EV-point": {
+     "optimum_fpr": 0.008026946375227086,
+     "saving_vs_observed": 0.11582104255858217,
+     "saving_vs_model_at_observed_fpr": 0.11582104255858217
+    },
+    "pi=0.05|k=100|EV-AUC": {
+     "optimum_fpr": 0.009180392020116184,
+     "saving_vs_observed": -0.00877807451438617,
+     "saving_vs_model_at_observed_fpr": 0.06333966392711898
+    },
+    "pi=0.05|k=100|UV1 (b=0.37)": {
+     "optimum_fpr": 0.00280859842955603,
+     "saving_vs_observed": 0.403729975491686,
+     "saving_vs_model_at_observed_fpr": 0.403729975491686
+    },
+    "pi=0.05|k=100|UV2 (b=1.16)": {
+     "optimum_fpr": 0.008968024470834663,
+     "saving_vs_observed": 0.08203473865932354,
+     "saving_vs_model_at_observed_fpr": 0.08203473865932354
+    },
+    "pi=0.05|k=100|Logistic": {
+     "optimum_fpr": 0.0062323548050915705,
+     "saving_vs_observed": 0.2514589067732156,
+     "saving_vs_model_at_observed_fpr": 0.22116678662459355
+    }
+   },
+   "note": "saving_vs_observed can be negative when the model curve lies below the observed point; that is a model discrepancy, not an optimal-policy result. Candidate AUCs are sensitivity choices, not confidence limits",
+   "stop_reason": null
+  },
+  {
+   "step": "S8 Layer C: thresholds",
+   "inputs_needed": [
+    "score release or calibration curve",
+    "operating threshold"
+   ],
+   "inputs_missing": [
+    "calibration evidence",
+    "operating threshold"
+   ],
+   "status": "stopped",
+   "evidential_label": "conditional on calibration (unsupported)",
+   "result": {
+    "eq17_mapping_for_reference_only": {
+     "0.001": {
+      "k=10": 0.9895931158833968,
+      "k=100": 0.9048436854777349
+     },
+     "0.01": {
+      "k=10": 0.9040616202787644,
+      "k=100": 0.4851559438193591
+     },
+     "0.05": {
+      "k=10": 0.6439409734287767,
+      "k=100": 0.15315404662336016
+     }
+    }
+   },
+   "note": null,
+   "stop_reason": "no calibration evidence or threshold: no statement about what threshold to use; Eq. (17) values are shown only as a conditional mapping"
+  },
+  {
+   "step": "S9 baseline scenarios",
+   "inputs_needed": [
+    "baseline accuracies",
+    "baseline sample sizes"
+   ],
+   "inputs_missing": [
+    "baseline sample sizes"
+   ],
+   "status": "partial",
+   "evidential_label": "pedagogical sampling scenario; not comparative evidence",
+   "result": {
+    "Decision tree": {
+     "1000": 0.39072698736393074,
+     "3000": 0.20558057080028613,
+     "10000": 0.09900494537826267,
+     "None": 0.04873861291397707
+    },
+    "LR+SVM+DT": {
+     "1000": 0.009609015237856535,
+     "3000": 5.002271254163923e-05,
+     "10000": 7.282580720226608e-09,
+     "None": 9.038994369644205e-15
+    },
+    "LSTM": {
+     "1000": 0.00025997127612878055,
+     "3000": 4.672978383973835e-09,
+     "10000": 2.3592978540622286e-18,
+     "None": 7.704486106687955e-37
+    },
+    "KNN": {
+     "1000": 4.625453601550166e-12,
+     "3000": 8.946997828990315e-31,
+     "10000": 9.310141123946563e-79,
+     "None": 1.266815156256052e-265
+    }
+   },
+   "note": "different datasets: neither a small p-value nor an interval crossing another study's point estimate identifies a method effect; a common-population comparison needs the same data, split and (for paired tests) per-instance predictions",
+   "stop_reason": null
+  },
+  {
+   "step": "S10 dependence",
+   "inputs_needed": [
+    "cluster identifiers or sizes"
+   ],
+   "inputs_missing": [
+    "cluster structure"
+   ],
+   "status": "partial",
+   "evidential_label": "scenario",
+   "result": {
+    "deff=1.45": [
+     0.0077375208655859696,
+     0.0218041608535079
+    ],
+    "deff=3.45": [
+     0.005900533405142806,
+     0.028450654434556043
+    ]
+   },
+   "note": "Wilson FPR interval at the effective size n/deff (width illustration only; coverage under clustering requires the cluster model of Section 4.8)",
+   "stop_reason": null
+  }
+ ],
+ "unresolved_inputs": [
+  "baseline sample sizes",
+  "calibration evidence",
+  "calibration_evidence",
+  "cluster structure",
+  "cluster_structure",
+  "duplicate_handling",
+  "operating threshold",
+  "operating_threshold",
+  "score_release",
+  "split_protocol",
+  "total_n"
+ ],
+ "stopped_steps": [
+  "S8 Layer C: thresholds"
+ ]
+}
